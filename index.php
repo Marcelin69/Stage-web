@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Source+Sans+3:wght@200&family=Ubuntu:ital,wght@0,300;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&family=Source+Sans+3:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+</head>
 <body>
+     <?php
+if(isset($_GET["susser"]) && isset($_GET["message"])){
+    echo '<script type="text/javascript">
+  alert("merci pour votre commentaire"); 
+</script> ';
+}
+?> 
+
     <header class="container-fluid">
         <img src="img/logo-ems.png" alt="logo">
         <h2 class="titre2">EMS matériel médical</h2>
@@ -125,18 +137,18 @@
             </div>
         </div>
         <div  class="container"  >
-            <form method="post" action="index.php">
+            <form method="post" action="php/log.php">
                 <h3>Nous contacter</h3>
                     <label for="exampleFormControlInput1"></label>
-                    <input type="text" class="form-control" name="nom" placeholder="Nom">
+                    <input type="text" class="form-control" name="nom" placeholder="Nom" required>
                     <label for="exampleFormControlInput1"></label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Prenom">
+                    <input type="text" class="form-control" name="prenom" placeholder="Prenom" required>
                     <label for="exampleFormControlInput1"></label>
-                    <input type="email" class="form-control" name="mail" placeholder="Email">
+                    <input type="email" class="form-control" name="mail" placeholder="Email" required>
                     <label for="exampleFormControlInput1"></label>
-                    <input type="nunber" class="form-control" name="tel" placeholder="Telephone">
+                    <input type="nunber" class="form-control" name="tel" placeholder="Telephone" required>
                     <label for="exampleFormControlInput1"></label>
-                    <textarea class="form-control" name="commentaire" rows="7" placeholder="Commentair"></textarea>
+                    <textarea class="form-control" name="commentaire" rows="7" placeholder="Commentair" required></textarea>
                    
                   <div class="button">
                       <button type="submit"> ENVOYER </button>
@@ -145,8 +157,15 @@
             </form>
         </div>
         <div class="container-fluid" >
-            <footer> Copyright &copy; 2024 EMS SANTE </footer>
+            <footer> Copyright &copy; 2021 EMS SANTE </footer>
         </div>
      
+<!-- <?php
+//  for($i=0;$i<=100;$i++){
+//     echo($i);    
+//  }
+?> -->
+
+
     </body>
 </html>
